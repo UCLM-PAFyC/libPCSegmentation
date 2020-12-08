@@ -30,19 +30,32 @@ SOURCES += libPCSegmentation.cpp \
     3dLineDetection/CommonFunctions.cpp \
     3dLineDetection/LineDetection3D.cpp
 
-DESTDIR_RELEASE=C:\dev\release
-DESTDIR_DEBUG=C:\dev\debug
+DESTDIR_RELEASE= ./../../../build/release
+DESTDIR_DEBUG= ./../../../build/debug
 
-BOOST_LIBS_PATH="E:/Librerias/PCL 1.8.1/3rdParty/Boost"
-FLANN_LIBS_PATH="E:/Librerias/PCL 1.8.1/3rdParty/FLANN"
-OPENCV_PATH = E:\Librerias\OpenCV-4.1.2\build
+PCL_PATH=./../../../depends/PCL.1.8.1
+#VTK_LIBS_PATH=./../../../depends/PCL.1.8.1/3rdParty/VTK
+BOOST_LIBS_PATH=./../../../depends/PCL.1.8.1/3rdParty/Boost
+FLANN_LIBS_PATH=./../../../depends/PCL.1.8.1/3rdParty/FLANN
+#EIGEN_PATH= ./../../../depends/eigen-eigen-323c052e1731
+OPENCV_PATH = ./../../../depends/OpenCV-4.1.2/build
 
-INCLUDEPATH += "E:/Librerias/PCL 1.8.1/include/pcl-1.8"
-INCLUDEPATH += "E:/Librerias/PCL 1.8.1/3rdParty/Boost/include/boost-1_64"
-INCLUDEPATH += "E:/Librerias/PCL 1.8.1/3rdParty/Eigen/eigen3"
-INCLUDEPATH += "E:/Librerias/PCL 1.8.1/3rdParty/FLANN/include"
+#BOOST_LIBS_PATH="E:/Librerias/PCL 1.8.1/3rdParty/Boost"
+#FLANN_LIBS_PATH="E:/Librerias/PCL 1.8.1/3rdParty/FLANN"
+#OPENCV_PATH = E:\Librerias\OpenCV-4.1.2\build
+
+#INCLUDEPATH += "E:/Librerias/PCL 1.8.1/include/pcl-1.8"
+#INCLUDEPATH += "E:/Librerias/PCL 1.8.1/3rdParty/Boost/include/boost-1_64"
+#INCLUDEPATH += "E:/Librerias/PCL 1.8.1/3rdParty/Eigen/eigen3"
+#INCLUDEPATH += "E:/Librerias/PCL 1.8.1/3rdParty/FLANN/include"
 INCLUDEPATH += $$OPENCV_PATH\include
-INCLUDEPATH +="./3dLineDetection"
+INCLUDEPATH += ./3dLineDetection
+INCLUDEPATH += $$PCL_PATH/include/pcl-1.8
+INCLUDEPATH += $$PCL_PATH/3rdParty/Boost/include/boost-1_64
+INCLUDEPATH += $$PCL_PATH/3rdParty/Eigen/eigen3
+INCLUDEPATH += $$PCL_PATH/3rdParty/FLANN/include
+#INCLUDEPATH += $$PCL_PATH/3rdParty/Qhull/include
+#INCLUDEPATH += $$PCL_PATH/3rdParty/VTK/include/vtk-8.0
 
 HEADERS += libPCSegmentation.h \
     libPCSegmentation_global.h \
@@ -53,7 +66,8 @@ HEADERS += libPCSegmentation.h \
     3dLineDetection/utils.h
 
 
-LIBS += "-LE:/Librerias/PCL 1.8.1/lib"
+#LIBS += "-LE:/Librerias/PCL 1.8.1/lib"
+LIBS += -L$$PCL_PATH/lib
 LIBS += -lUser32 -lGdi32 # candidato a eliminar
 debug{
     DESTDIR = $$DESTDIR_DEBUG
