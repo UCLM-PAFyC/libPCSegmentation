@@ -1,0 +1,14 @@
+// Author: David Hernandez Lopez, david.hernandez@uclm.es
+
+#ifndef LIBPCSEGMENTATION_GLOBAL_H
+#define LIBPCSEGMENTATION_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(LIBPCSEGMENTATION_LIBRARY)
+#  define LIBPCSEGMENTATIONSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define LIBPCSEGMENTATIONSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // LIBPCSEGMENTATION_GLOBAL_H
