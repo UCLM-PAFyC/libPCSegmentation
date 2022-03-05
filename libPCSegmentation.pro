@@ -30,8 +30,10 @@ SOURCES += libPCSegmentation.cpp \
     3dLineDetection/CommonFunctions.cpp \
     3dLineDetection/LineDetection3D.cpp
 
-DESTDIR_RELEASE= ./../../../build/release
-DESTDIR_DEBUG= ./../../../build/debug
+#DESTDIR_RELEASE= ./../../../build/release
+#DESTDIR_DEBUG= ./../../../build/debug
+DESTDIR_RELEASE= ./../../../build_osgeo4w/release
+DESTDIR_DEBUG= ./../../../build_osgeo4w/debug
 
 PCL_PATH=./../../../depends/PCL.1.8.1
 #VTK_LIBS_PATH=./../../../depends/PCL.1.8.1/3rdParty/VTK
