@@ -31,7 +31,7 @@
 
 #include "libPCSegmentation.h"//
 
-libPCSegmentation * libPCSegmentation::mInstance = 0;
+libPCSegmentation * libPCSegmentation::mInstance = 0;//
 
 bool libPCSegmentation::groundSegmentationByProgressiveMorphologicalFilter(QMap<QString, QVector<double> > &points,
                                                                            QVector<QString> &groundPointsIds,
